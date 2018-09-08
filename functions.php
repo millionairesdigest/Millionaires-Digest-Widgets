@@ -9,7 +9,16 @@ Author URI: https://millionairedigest.com/
 
 /* Register All Widgets */
 function register_widgets() {
+	register_widget("AuthorRecentArticles");
+	register_widget("AuthorRecentVideos");
+	register_widget("AuthorRecentPhotos");
+	register_widget("AuthorRecentMusic");
 	register_widget( 'BuddyPress_User_Info_Widget' );
+	register_widget("BuddyPress_Author_Widget");
+	register_widget("BuddyPress_Posts_Widget");
+	register_widget("BP_My_Groups_Widget");
+	register_widget("Recent_Profile_Visitors_Widget");
+	register_widget("Total_Friends_Widget");
 }
 add_action( 'widgets_init', 'register_widgets' );
 
