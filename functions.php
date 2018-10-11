@@ -469,8 +469,9 @@ function bpew_extend_form($class, $return, $instance) {
             <input '.checked($instance['bp_component_type'], 'member_typeb', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typeb"/> '.__('Member Type: Brand', 'bpew').'<br />
             <input '.checked($instance['bp_component_type'], 'member_typec', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typec"/> '.__('Member Type: Famous Person', 'bpew').'<br />
             <input '.checked($instance['bp_component_type'], 'member_typed', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typed"/> '.__('Member Type: Organization', 'bpew').'<br />
-            <input '.checked($instance['bp_component_type'], 'member_typee', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typee"/> '.__('Member Type: Millonaires Digest', 'bpew').'<br />
-            <input '.checked($instance['bp_component_type'], 'member_typef', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typef"/> '.__('Member Type: Government', 'bpew').'<br />
+            <input '.checked($instance['bp_component_type'], 'member_typee', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typee"/> '.__('Member Type: Millonaire\'s Digest (Singular)', 'bpew').'<br />
+			<input '.checked($instance['bp_component_type'], 'member_typee', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typef"/> '.__('Member Type: Millonaire\'s Digest (Plural)', 'bpew').'<br />
+            <input '.checked($instance['bp_component_type'], 'member_typef', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typeg"/> '.__('Member Type: Government', 'bpew').'<br />
            <input '.checked($instance['bp_component_type'], 'members', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="members"/> '.__('Members (Single)', 'bpew').'<br />
 		   <input '.checked($instance['bp_component_type'], 'my_profile', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="my_profile"/> '.__('My Profile', 'bpew').'<br />
            <input '.checked($instance['bp_component_type'], 'members_dir', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="members_dir"/> '.__('Members Directory', 'bpew').'<br />
@@ -511,11 +512,15 @@ function bpew_extend_display($instance, $this, $args) {
         return $instance;
     }
     // Display on profile pages with the "Millionaire's Digest" member type
-    if($instance['bp_component_type'] == 'member_typee' && bp_displayed_user_id() && bp_has_member_type( $user_id, 'millionaires-digest' )){
+    if($instance['bp_component_type'] == 'member_typee' && bp_displayed_user_id() && bp_has_member_type( $user_id, 'millionaire-digest' )){
+        return $instance;
+    }
+	// Display on profile pages with the "Millionaire's Digest" member type
+    if($instance['bp_component_type'] == 'member_typef' && bp_displayed_user_id() && bp_has_member_type( $user_id, 'millionaires-digest' )){
         return $instance;
     }
     // Display on profile pages with the "Government" member type
-    if($instance['bp_component_type'] == 'member_typef' && bp_displayed_user_id() && bp_has_member_type( $user_id, 'government' )){
+    if($instance['bp_component_type'] == 'member_typeg' && bp_displayed_user_id() && bp_has_member_type( $user_id, 'government' )){
         return $instance;
     }
 	// Display on logged-in user's profile only
