@@ -470,8 +470,8 @@ function bpew_extend_form($class, $return, $instance) {
             <input '.checked($instance['bp_component_type'], 'member_typec', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typec"/> '.__('Member Type: Famous Person', 'bpew').'<br />
             <input '.checked($instance['bp_component_type'], 'member_typed', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typed"/> '.__('Member Type: Organization', 'bpew').'<br />
             <input '.checked($instance['bp_component_type'], 'member_typee', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typee"/> '.__('Member Type: Millonaire\'s Digest (Singular)', 'bpew').'<br />
-			<input '.checked($instance['bp_component_type'], 'member_typee', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typef"/> '.__('Member Type: Millonaire\'s Digest (Plural)', 'bpew').'<br />
-            <input '.checked($instance['bp_component_type'], 'member_typef', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typeg"/> '.__('Member Type: Government', 'bpew').'<br />
+			<input '.checked($instance['bp_component_type'], 'member_typef', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typef"/> '.__('Member Type: Millonaire\'s Digest (Plural)', 'bpew').'<br />
+            <input '.checked($instance['bp_component_type'], 'member_typeg', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="member_typeg"/> '.__('Member Type: Government', 'bpew').'<br />
            <input '.checked($instance['bp_component_type'], 'members', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="members"/> '.__('Members (Single)', 'bpew').'<br />
 		   <input '.checked($instance['bp_component_type'], 'my_profile', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="my_profile"/> '.__('My Profile', 'bpew').'<br />
            <input '.checked($instance['bp_component_type'], 'members_dir', false).' type="radio" name="'.$class->get_field_name('bp_component_type').'" value="members_dir"/> '.__('Members Directory', 'bpew').'<br />
@@ -1164,7 +1164,7 @@ class Recent_Profile_Visitors_Widget extends WP_Widget {
 public function widget( $args, $instance ) {
 	//Hide the widget if user has turned recording off or if the user does not have one of the following member types
 	$user_id = bp_loggedin_user_id();
-	if ( ! is_super_admin() && ! bp_has_member_type( $user_id, 'user' ) && ! bp_has_member_type( $user_id, 'millionaires-digest' ) )
+	if ( ! is_super_admin() && ! bp_has_member_type( $user_id, 'user' ) && ! bp_has_member_type( $user_id, 'millionaire-digest' ) )
 			return;
 	if ( ! visitors_is_active_visitor_recording( $user_id ) )
 			return;
