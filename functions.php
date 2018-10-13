@@ -636,7 +636,7 @@ class AuthorRecentArticles extends WP_Widget {
 		?>
 		<ul class="author_article">
 		<?php foreach ( $authors_posts as $authors_post ) { ?>
-			<li>
+			<li class="posts_content">
             <?php if( $showthumbnail ) : ?>
             <div class="author_left" style="width:<?php echo $width_image; ?>px;height:<?php echo $height_image; ?>px;">           
             <?php
@@ -775,7 +775,7 @@ class AuthorRecentVideos extends WP_Widget {
 		?>
 		<ul class="author_video">
 		<?php foreach ( $authors_posts as $authors_post ) { ?>
-			<li>
+			<li class="posts_content">
             <?php if( $showthumbnail ) : ?>
             <div class="author_left" style="width:<?php echo $width_image; ?>px;height:<?php echo $height_image; ?>px;">           
             <?php
@@ -911,7 +911,7 @@ class AuthorRecentPhotos extends WP_Widget {
 		?>
 		<ul class="author_photo">
 		<?php foreach ( $authors_posts as $authors_post ) { ?>
-			<li>
+			<li class="posts_content">
             <?php if( $showthumbnail ) : ?>
             <div class="author_left" style="width:<?php echo $width_image; ?>px;height:<?php echo $height_image; ?>px;">           
             <?php
@@ -1047,7 +1047,7 @@ class AuthorRecentMusic extends WP_Widget {
 		?>
 		<ul class="author_audio">
 		<?php foreach ( $authors_posts as $authors_post ) { ?>
-			<li>
+			<li class="posts_content">
             <?php if( $showthumbnail ) : ?>
             <div class="author_left" style="width:<?php echo $width_image; ?>px;height:<?php echo $height_image; ?>px;">           
             <?php
