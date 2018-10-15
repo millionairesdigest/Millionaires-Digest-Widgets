@@ -1045,7 +1045,7 @@ class AuthorRecentMusic extends WP_Widget {
 				echo $before_title . $title . $after_title; 
 			}
 		?>
-		<ul class="author_audio">
+		<ul class="author_music">
 		<?php foreach ( $authors_posts as $authors_post ) { ?>
 			<li class="posts_content">
             <?php if( $showthumbnail ) : ?>
@@ -1062,7 +1062,7 @@ class AuthorRecentMusic extends WP_Widget {
 				}
 				elseif( $alternateImg != '') {?>
 				<a href="<?php echo get_permalink( $authors_post->ID ) ; ?>">
-                <img src="<?php echo $alternateImg; ?>" width="<?php echo $width_image; ?>" height="<?php echo $height_image; ?>" class="wp-audio-image" />
+                <img src="<?php echo $alternateImg; ?>" width="<?php echo $width_image; ?>" height="<?php echo $height_image; ?>" class="wp-music-image" />
                 </a>
 			<?php }
 			}?>
