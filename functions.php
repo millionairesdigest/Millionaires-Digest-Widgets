@@ -1031,7 +1031,7 @@ class AuthorRecentMusic extends WP_Widget {
 		 global $authordata, $post;
          $authors_posts = get_posts( array( 
 			 'author' => $authordata->ID,
-			 'post_type' => 'audio',
+			 'post_type' => 'music',
 			 'post__not_in' => array( $post->ID ),
 			 'posts_per_page' => $number
 		 ) );
