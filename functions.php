@@ -504,7 +504,7 @@ function bpew_extend_display($instance, $this, $args) {
         return $instance;
     }
     // Display on profile pages with the "Famous Person" member type
-    if($instance['bp_component_type'] == 'member_typec' && bp_displayed_user_id() && bp_has_member_type( $user_id, 'famous-person' )){
+    if($instance['bp_component_type'] == 'member_typec' && bp_displayed_user_id() && bp_has_member_type( $user_id, 'famous_person' )){
         return $instance;
     }
     // Display on profile pages with the "Organization" member type
@@ -512,11 +512,11 @@ function bpew_extend_display($instance, $this, $args) {
         return $instance;
     }
     // Display on profile pages with the "Millionaire's Digest" member type
-    if($instance['bp_component_type'] == 'member_typee' && bp_displayed_user_id() && bp_has_member_type( $user_id, 'millionaire-digest' )){
+    if($instance['bp_component_type'] == 'member_typee' && bp_displayed_user_id() && bp_has_member_type( $user_id, 'millionaire_digest' )){
         return $instance;
     }
 	// Display on profile pages with the "Millionaire's Digest" member type
-    if($instance['bp_component_type'] == 'member_typef' && bp_displayed_user_id() && bp_has_member_type( $user_id, 'millionaires-digest' )){
+    if($instance['bp_component_type'] == 'member_typef' && bp_displayed_user_id() && bp_has_member_type( $user_id, 'millionaires_digest' )){
         return $instance;
     }
     // Display on profile pages with the "Government" member type
@@ -1164,7 +1164,7 @@ class Recent_Profile_Visitors_Widget extends WP_Widget {
 public function widget( $args, $instance ) {
 	//Hide the widget if user has turned recording off or if the user does not have one of the following member types
 	$user_id = bp_loggedin_user_id();
-	if ( ! is_super_admin() && ! bp_has_member_type( $user_id, 'user' ) && ! bp_has_member_type( $user_id, 'millionaire-digest' ) )
+	if ( ! is_super_admin() && ! bp_has_member_type( $user_id, 'user' ) && ! bp_has_member_type( $user_id, 'millionaire_digest' ) )
 			return;
 	if ( ! visitors_is_active_visitor_recording( $user_id ) )
 			return;
